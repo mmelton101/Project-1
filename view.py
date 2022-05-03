@@ -1,0 +1,73 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_mainWindow(object):
+    def setupUi(self, mainWindow):
+        mainWindow.setObjectName("mainWindow")
+        mainWindow.resize(322, 473)
+        mainWindow.setMinimumSize(QtCore.QSize(322, 473))
+        mainWindow.setMaximumSize(QtCore.QSize(322, 473))
+        self.centralwidget = QtWidgets.QWidget(mainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.line_baselength = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_baselength.setGeometry(QtCore.QRect(170, 240, 113, 22))
+        self.line_baselength.setObjectName("line_baselength")
+        self.line_radiusheight = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_radiusheight.setGeometry(QtCore.QRect(170, 180, 113, 22))
+        self.line_radiusheight.setObjectName("line_radiusheight")
+        self.radio_circle = QtWidgets.QRadioButton(self.centralwidget)
+        self.radio_circle.setGeometry(QtCore.QRect(40, 60, 95, 20))
+        self.radio_circle.setObjectName("radio_circle")
+        self.radio_rectangle = QtWidgets.QRadioButton(self.centralwidget)
+        self.radio_rectangle.setGeometry(QtCore.QRect(190, 60, 95, 20))
+        self.radio_rectangle.setObjectName("radio_rectangle")
+        self.radio_square = QtWidgets.QRadioButton(self.centralwidget)
+        self.radio_square.setGeometry(QtCore.QRect(40, 120, 95, 20))
+        self.radio_square.setObjectName("radio_square")
+        self.radio_triangle = QtWidgets.QRadioButton(self.centralwidget)
+        self.radio_triangle.setGeometry(QtCore.QRect(190, 120, 95, 20))
+        self.radio_triangle.setObjectName("radio_triangle")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(40, 190, 81, 16))
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(40, 240, 71, 16))
+        self.label_2.setObjectName("label_2")
+        self.button_enter = QtWidgets.QPushButton(self.centralwidget)
+        self.button_enter.setGeometry(QtCore.QRect(110, 300, 93, 28))
+        self.button_enter.setObjectName("button_enter")
+        self.line_area = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_area.setGeometry(QtCore.QRect(100, 370, 113, 22))
+        self.line_area.setObjectName("line_area")
+        mainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(mainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 322, 26))
+        self.menubar.setObjectName("menubar")
+        mainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(mainWindow)
+        self.statusbar.setObjectName("statusbar")
+        mainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(mainWindow)
+        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+
+    def retranslateUi(self, mainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        mainWindow.setWindowTitle(_translate("mainWindow", "Area"))
+        self.radio_circle.setText(_translate("mainWindow", "Circle"))
+        self.radio_rectangle.setText(_translate("mainWindow", "Rectangle"))
+        self.radio_square.setText(_translate("mainWindow", "Square"))
+        self.radio_triangle.setText(_translate("mainWindow", "Triangle"))
+        self.label.setText(_translate("mainWindow", "Radius/Height"))
+        self.label_2.setText(_translate("mainWindow", "Base/Length"))
+        self.button_enter.setText(_translate("mainWindow", "Enter"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    mainWindow = QtWidgets.QMainWindow()
+    ui = Ui_mainWindow()
+    ui.setupUi(mainWindow)
+    mainWindow.show()
+    sys.exit(app.exec_())
